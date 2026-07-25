@@ -1,0 +1,13 @@
+[project]
+name = "ml-learn"
+version = "0.1.0"
+description = "Entorno reproducible para aprender machine learning"
+requires-python = ">=3.12"
+dependencies = [
+    "ipykernel>=6.30",
+    "jupyterlab>=4.4",
+    "plotly>=6.0",
+    "polars>=1.0",
+    "scikit-learn>=1.6",
+    "xgboost>=3.0",
+]
