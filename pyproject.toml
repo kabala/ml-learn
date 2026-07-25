@@ -2,7 +2,7 @@
 name = "ml-learn"
 version = "0.1.0"
 description = "Entorno reproducible para aprender machine learning"
-requires-python = ">=3.12"
+requires-python = ">=3.14"
 dependencies = [
     "ipykernel>=6.30",
     "jupyterlab>=4.4",

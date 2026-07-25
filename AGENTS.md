@@ -43,9 +43,11 @@ comprensibles antes de usar datos complejos.
 
 ## Entorno técnico
 
-- Gestionar el proyecto exclusivamente con `uv`. Crear/sincronizar el entorno
-  local con `uv sync` y ejecutar herramientas con `uv run ...`; no instalar
-  paquetes globalmente ni activar dependencias ajenas al proyecto.
+- Gestionar el proyecto exclusivamente con `uv`. Usar la versión estable más
+  reciente de Python que sea compatible con todas las dependencias; antes de
+  subirla, comprobarlo con `uv sync` e importaciones reales. Crear/sincronizar
+  el entorno local con `uv sync` y ejecutar herramientas con `uv run ...`; no
+  instalar paquetes globalmente ni activar dependencias ajenas al proyecto.
 - Usar **Polars** como API principal para cargar, transformar y validar datos
   tabulares. Convertir a NumPy o pandas solo en el límite que requiera una API
   de modelado.
