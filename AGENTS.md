@@ -41,6 +41,37 @@ comprensibles antes de usar datos complejos.
 - Mantener el código breve, legible y orientado a explicar una idea. Las
   conclusiones deben vivir junto a las gráficas o métricas que las justifican.
 
+## Estilo de enseñanza para este alumno
+
+Quien trabaja en este repositorio es un aprendiz de ML que todavía está
+reforzando sus fundamentos de matemáticas y estadística, y aprende mejor de
+forma **visual** que a partir de fórmulas puras. Estas directrices aplican a
+todo notebook nuevo o reescrito, y complementan (no reemplazan) los
+"Principios" de arriba:
+
+- Nunca introducir una fórmula o notación matemática sin antes construir la
+  intuición con una analogía cotidiana y/o una gráfica. La fórmula llega
+  *después* de que el lector ya intuye qué debería pasar.
+- Definir explícitamente, la primera vez que aparece, cualquier término
+  matemático o estadístico usado (media, varianza, residuo, logaritmo,
+  derivada/pendiente, convexidad, probabilidad, verosimilitud, cuantil,
+  gradiente...), aunque parezca elemental. No asumir que el lector ya lo sabe.
+- Priorizar gráficas Plotly incrementales o paso a paso (trayectorias,
+  snapshots, comparaciones lado a lado, regiones sombreadas) sobre bloques de
+  fórmulas o tablas. Toda fórmula relevante debe ir acompañada de al menos una
+  visualización que la ilustre.
+- Seguir esta progresión fija en cada notebook: motivación con un ejemplo
+  cotidiano → intuición visual → formalización matemática (con cada símbolo
+  explicado en prosa) → código → visualización del resultado → ideas clave →
+  ejercicio de predicción (que el alumno prediga qué va a pasar *antes* de
+  ejecutar la celda, no solo que la ejecute).
+- Usar una paleta de color consistente entre notebooks: datos reales en
+  negro, modelos o casos de comparación en colores distintos, y el resultado
+  óptimo o destacado en rojo.
+- Usar [GLOSARIO.md](GLOSARIO.md) como fuente de verdad de qué tema cubre cada
+  notebook próximo y cuál es su objetivo de aprendizaje declarado; al terminar
+  un notebook, actualizar su fila a ✅ en ese archivo.
+
 ## Entorno técnico
 
 - Gestionar el proyecto exclusivamente con `uv`. Usar la versión estable más
@@ -62,12 +93,17 @@ comprensibles antes de usar datos complejos.
 
 ## Organización y datos
 
-Usar, cuando el material crezca, una estructura por tema como
-`01_fundamentos/`, `02_supervisado/` y `03_no_supervisado/`, con notebooks y
-scripts nombrados de forma descriptiva. Guardar datasets descargados o
-generados en `data/` y artefactos temporales en `artifacts/`; no versionar datos
-grandes, credenciales ni información personal. Incluir instrucciones de descarga
-o generación en vez de copiar material con licencia incierta.
+Los notebooks se organizan por tema dentro de `notebooks/`, siguiendo la
+convención ya en uso:
+`notebooks/aprendizaje_<supervisado|no_supervisado>/<tarea>/<algoritmo>/NN_tema.ipynb`
+(por ejemplo, `notebooks/aprendizaje_supervisado/regresion/regresion_lineal/01_funcion_de_costo.ipynb`).
+El listado completo de temas cubiertos y pendientes, con la ruta exacta de
+cada notebook, vive en [GLOSARIO.md](GLOSARIO.md) — consultarlo antes de crear
+un notebook nuevo para mantener la numeración y el nombre consistentes.
+Guardar datasets descargados o generados en `data/` y artefactos temporales en
+`artifacts/`; no versionar datos grandes, credenciales ni información
+personal. Incluir instrucciones de descarga o generación en vez de copiar
+material con licencia incierta.
 
 ## Comprobaciones antes de dar por terminado un cambio
 
